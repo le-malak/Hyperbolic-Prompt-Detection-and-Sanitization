@@ -1,0 +1,10 @@
+from __future__ import annotations
+
+from importlib import resources
+from pathlib import Path
+
+
+def get_svdd_weights_path() -> Path:
+    # expects the file to live at src/hype/assets/best_hyperbolic_svdd_model.pth
+    with resources.as_file(resources.files("hype") / "assets" / "best_hyperbolic_svdd_model.pth") as p:
+        return Path(p)
